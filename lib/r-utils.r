@@ -21,7 +21,11 @@
 # @return   TRUE if the element belongs to the specified
 #
 `%is%` <- function(x, y) {
-    inherits(x, y)
+    is(x, y)
+}
+
+is <- function(o, c) {
+    class(o) == c
 }
 
 `%if%` <- function(x, y) {

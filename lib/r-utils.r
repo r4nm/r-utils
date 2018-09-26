@@ -12,6 +12,15 @@
     if (!is.null(x)) x else y
 }
 
+##
+# If the x variable is not empty, this is returned,
+# otherwise, the y variable is returned.
+#
+# @param x  Left value
+# @param y  Right value
+#
+# @return   x variable, if this is not empty
+#
 `%?:%` <- function(x, y) {
     return (if (!is.empty(x)) x else y)
 }
@@ -51,7 +60,7 @@ is <- function(o, c) {
 }
 
 ##
-# Check if object is empty. Values such as NULL, NA, NaN, False, 0, "",
+# Check if object is empty. Values such as NULL, NA, NaN, FALSE, 0, "",
 # are taken as empty.
 #
 # @param o  Object
@@ -59,8 +68,8 @@ is <- function(o, c) {
 # @return  TRUE if object is empty
 #
 is.empty <- function(o) {
-    for (i in o) {
-        if (!(i %in% c(0, "", NA, NaN, FALSE))) {
+    for (e in o) {
+        if (!(e %in% c(0, "", NA, NaN, FALSE))) {
             return (FALSE)
         }
     }

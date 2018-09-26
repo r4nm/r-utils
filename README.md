@@ -8,7 +8,7 @@ NULL %??% 5
 NULL %??% 2 %??% 3
 NULL %??% NULL %??% 3
 
-a <- 2
+a <- 1
 4 %if% (a == 1)
 c(1:3) %if% (a == 1) %else% 5
 </pre>

@@ -12,6 +12,12 @@
     if (!is.null(x)) x else y
 }
 
+if (!exists("is", mode = "function")) {
+    is <- function(o, c) {
+        class(o) == c
+    }
+}
+
 ##
 # Check if the element belongs to the specified
 #
@@ -22,10 +28,6 @@
 #
 `%is%` <- function(x, y) {
     is(x, y)
-}
-
-is <- function(o, c) {
-    class(o) == c
 }
 
 `%if%` <- function(x, y) {

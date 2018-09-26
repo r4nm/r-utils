@@ -3,7 +3,7 @@
 <pre>
 sys.source("lib/r-utils.r")
 
-a <- 2
+a <- 1
 4 %if% (a == 1)
 c(1:3) %if% (a == 1) %else% 5
 

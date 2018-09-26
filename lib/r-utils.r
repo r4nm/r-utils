@@ -13,8 +13,7 @@
 }
 
 `%?:%` <- function(x, y) {
-    b <- is.null(x) || is.na(x) || is.nan(x) || x == 0
-    if (b == FALSE) x else y
+    return (if (!is.empty(x)) x else y)
 }
 
 if (!exists("is", mode = "function")) {
@@ -49,4 +48,22 @@ is <- function(o, c) {
 
 `%else%` <- function(x, y) {
     x %??% y
+}
+
+##
+# Check if object is empty. Values such as NULL, NA, NaN, False, 0, "",
+# are taken as empty.
+#
+# @param o  Object
+#
+# @return  TRUE if object is empty
+#
+is.empty <- function(o) {
+    for (i in o) {
+        if (!(i %in% c(0, "", NA, NaN, FALSE))) {
+            return (FALSE)
+        }
+    }
+
+    return (TRUE)
 }

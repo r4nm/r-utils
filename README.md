@@ -3,7 +3,9 @@
 <pre>
 sys.source("lib/r-utils.r")
 
-NULL %% 5
+1 %??% 2 %??% NULL
+NULL %??% 2 %??% 3
+NULL %??% NULL %??% 3
 
 a <- 2
 4 %if% (a == 1)

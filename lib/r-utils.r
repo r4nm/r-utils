@@ -26,7 +26,7 @@ if (!exists("is", mode = "function")) {
 # @return   TRUE if belongs
 #
 is <- function(o, c) {
-    class(o) == c || inherits(o, c)
+    (is.vector(o) && c == "vector") || class(o) == c || inherits(o, c)
 }
 }
 

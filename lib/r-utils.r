@@ -13,18 +13,26 @@
 }
 
 if (!exists("is", mode = "function")) {
-    is <- function(o, c) {
-        class(o) == c
-    }
+##
+# Check if object belongs to the class
+#
+# @param o  Object
+# @param c  Class
+#
+# @return   TRUE if belongs
+#
+is <- function(o, c) {
+    class(o) == c || inherits(o, c)
+}
 }
 
 ##
-# Check if the element belongs to the specified
+# Check if object belongs to the class
 #
 # @param x  Left value
 # @param y  Right value
 #
-# @return   TRUE if the element belongs to the specified
+# @return   TRUE if object belongs to the class
 #
 `%is%` <- function(x, y) {
     is(x, y)

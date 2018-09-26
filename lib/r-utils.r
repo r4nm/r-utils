@@ -12,6 +12,10 @@
     if (!is.null(x)) x else y
 }
 
+`%?:%` <- function(x, y) {
+    if (!is.null(x)) x else y
+}
+
 if (!exists("is", mode = "function")) {
 ##
 # Check if object belongs to the class

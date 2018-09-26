@@ -13,7 +13,8 @@
 }
 
 `%?:%` <- function(x, y) {
-    if (!is.null(x)) x else y
+    b <- is.null(x) || is.na(x) || is.nan(x) || x == 0
+    if (b == FALSE) x else y
 }
 
 if (!exists("is", mode = "function")) {
